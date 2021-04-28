@@ -2,113 +2,115 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-  <title>AKSH DESAI</title>
+    <title>AKSH DESAI</title>
 
 </head>
 
 <body>
 
-  <div class="container "
-    style="border: 3px solid ;width: 100vw; height: 100vh; background: linear-gradient(to left, cyan, purple);">
-    <div class="row" id="aary">
 
+    <div class="container m-auto"
+        style="width: 100vw; height: 100vh; background: linear-gradient(to left, cyan, purple);">
+
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                <h1>Welcome to <u>AKSH DESAI</u> Calculator:- </h1>
+            </div>
+        </div>
+
+
+
+        <div class="row m-5" style=" text-align: center;background: radial-gradient(cyan, purple);">
+            <div class="col-xl-2 m-auto">
+                <input id="a1" class="p-3" type="text " placeholder="Enter the First Integer"
+                    style="text-align: center; background: linear-gradient(to left, cyan, purple); color: violet;">
+            </div>
+            <div class="col-xl-2  mt-2">
+                <input id="a2" class="p-3" list="browser" type="text "
+                    style="text-align: center;background: linear-gradient(to left, cyan, blue); color: violet;"
+                    placeholder="Choose an Option">
+                <datalist id="browser">
+                    <option value="+"></option>
+                    <option value="-"></option>
+                    <option value="*"></option>
+                    <option value="/"></option>
+                </datalist>
+            </div>
+            <div class="col-xl-2 m-auto">
+                <input class="p-3 mt-2" id="a3" type="text " placeholder="Enter the Second Integer"
+                    style="text-align: center;background: linear-gradient(to left, cyan, purple); color: violet;">
+            </div>
+            <div class="col-xl-2 mb-2 mt-2">
+                <button type="button" class="btn btn-primary p-2" onclick="aksh()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Calculate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            </div>
+            <div class="col-xl-2 mb-2" id="a5" style="text-align: center; color: violet;">
+                <button type="button"
+                    class="btn btn-success p-3 ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div id="aksh2"></div>
+                </button>
+
+            </div>
+        </div>
     </div>
-    <div class="row">
-      <div class="col-md-6 m-auto">
-        <h1>Welcome to <u>AKSH DESAI</u> Calculator:- </h1>
-      </div>
-    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
 
-    <br><br><br>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script>
 
-    <div class="row">
-      <div class="col-8 m-auto">
-        <input id="a1" type="text " placeholder="Enter the First Integer"
-          style="text-align: center; background: linear-gradient(to left, cyan, purple); color: violet;">
-      </div>
-      <div class="col-8 m-auto">
-        <input id="a2" list="browser" type="text "
-          style="text-align: center;background: linear-gradient(to left, cyan, blue);" placeholder="Choose an Option">
-        <datalist id="browser">
-          <option value="+"></option>
-          <option value="-"></option>
-          <option value="*"></option>
-          <option value="/"></option>
-        </datalist>
-      </div>
-      <div class="col-8 m-auto">
-        <input id="a3" type="text " placeholder="Enter the Second Integer"
-          style="text-align: center;background: linear-gradient(to left, cyan, purple);">
-      </div>
-      <div class="col-8 m-auto">
-        <button type="button" class="btn btn-primary" onclick="aksh()">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          Calculate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-      </div>
-      <div class="col-8 m-auto" id="a5" style="text-align: center;">
-        <button type="button" class="btn btn-success p-5 ">
-          <div id="aksh2"></div>
-        </button>
+        function aksh() {
+            let a1 = document.getElementById('a1')
+            let a2 = document.getElementById('a2')
+            let a3 = document.getElementById('a3')
+            let a5 = document.getElementById('a5')
+            let aary = document.getElementById('aary')
+            let aksh2 = document.getElementById('aksh2');
+            if (a2.value == '+') {
+                a1 = Number(a1.value)
+                a3 = Number(a3.value)
+                rudra = a1 + a3
+                aksh2.innerText = rudra
+                alert(`${a1} ${a2.value} ${a3} = ${rudra}`)
 
-      </div>
-    </div>
-  </div>
-  <!-- Optional JavaScript; choose one of the two! -->
+            }
+            else if (a2.value == '-') {
+                a1 = Number(a1.value)
+                a3 = Number(a3.value)
+                rudra = a1 - a3
+                aksh2.innerText = rudra
+                alert(`${a1} ${a2.value} ${a3} = ${rudra}`)
+            }
+            else if (a2.value == '*') {
+                a1 = Number(a1.value)
+                a3 = Number(a3.value)
+                rudra = a1 * a3
+                aksh2.innerText = rudra
+                alert(`${a1} ${a2.value} ${a3} = ${rudra}`)
+            }
+            else if (a2.value == '/') {
+                a1 = Number(a1.value)
+                a3 = Number(a3.value)
+                rudra = a1 / a3
+                aksh2.innerText = rudra
+                alert(`${a1} ${a2.value} ${a3} = ${rudra}`)
+            }
 
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-    crossorigin="anonymous"></script>
-  <script>
-
-    function aksh() {
-      let a1 = document.getElementById('a1')
-      let a2 = document.getElementById('a2')
-      let a3 = document.getElementById('a3')
-      let a5 = document.getElementById('a5')
-      let aary = document.getElementById('aary')
-      let aksh2 = document.getElementById('aksh2');
-      if (a2.value == '+') {
-        a1 = Number(a1.value)
-        a3 = Number(a3.value)
-        rudra = a1 + a3
-        aksh2.innerText = rudra
-        alert(`${a1} ${a2.value} ${a3} = ${rudra}`)
-
-      }
-      else if (a2.value == '-') {
-        a1 = Number(a1.value)
-        a3 = Number(a3.value)
-        rudra = a1 - a3
-        aksh2.innerText = rudra
-        alert(`${a1} ${a2.value} ${a3} = ${rudra}`)
-      }
-      else if (a2.value == '*') {
-        a1 = Number(a1.value)
-        a3 = Number(a3.value)
-        rudra = a1 * a3
-        aksh2.innerText = rudra
-        alert(`${a1} ${a2.value} ${a3} = ${rudra}`)
-      }
-      else if (a2.value == '/') {
-        a1 = Number(a1.value)
-        a3 = Number(a3.value)
-        rudra = a1 / a3
-        aksh2.innerText = rudra
-        alert(`${a1} ${a2.value} ${a3} = ${rudra}`)
-      }
-
-    }
-  </script>
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
+        }
+    </script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     -->
